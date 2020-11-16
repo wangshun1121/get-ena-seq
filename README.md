@@ -1,37 +1,15 @@
 # Get ENA Seq
 
-#### 介绍
-下载ENA的高通量测序数据
+是时候推出针对ENA上测序数据专用的下载工具了。
 
-#### 软件架构
-软件架构说明
+此工具将[ASCPsra](https://gitee.com/wangshun1121/ASCPsra)中，下载ENA数据的部分剥离出来，并利用ENA数据库的API实现数据信息自动收集整合，最终形成了这一版代码。
 
+## 更新信息
 
-#### 安装教程
+## 程序部署与使用
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+参见本项目的[Wiki](https://gitee.com/wangshun1121/get-ena-seq/wikis/)，点击下面的链接直接跳转：
 
-#### 使用说明
+* [**程序安装与环境部署**](https://gitee.com/wangshun1121/get-ena-seq/wikis/程序安装与环境部署?sort_id=3113455)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+* [**从ENA下载测序数据**](https://gitee.com/wangshun1121/get-ena-seq/wikis/下载ENA测序数据?sort_id=3113459)
