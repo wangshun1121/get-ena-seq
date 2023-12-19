@@ -186,8 +186,15 @@ sub download{
       return 0;
       print "No data for $id in $datatype format!\n";
     }
-    $WebInfo=(split/\n/,$WebInfo)[1];
-    my ($Links,$md5Line)=(split/\t/,$WebInfo)[-2,-1];
+    # 突然发现ENA的API又变了！ 2023.12.19
+    # $WebInfo=(split/\n/,$WebInfo)[1];
+    # my ($Links,$md5Line)=(split/\t/,$WebInfo)[-2,-1];
+    my %InfoHash = &WebInfo2Hash($WebInfo);
+    my $Links = $InfoHash{"$datatype\_$tool"};
+    my $md5Line = $InfoHash{"$datatype\_md5"};
+
+    # $WebInfo=(split/\n/,$WebInfo)[1];
+    # my ($Links,$md5Line)=(split/\t/,$WebInfo)[-2,-1];
     # 修改ENA Reads获取的API，2020.8.17
       
     my @Links=split/;/,$Links;
@@ -269,8 +276,18 @@ sub download{
       }
     }
 
-
-
+  sub WebInfo2Hash{
+    # Web Info 不晓得何时改变了列的顺序，故不能直接用第多少列来代表具体内容
+    my $WebInfo = shift; 
+    my @a = split/\n/,$WebInfo;
+    my @Keys = split/\t/,$a[0];
+    my @Infos = split/\t/,$a[1];
+    my %Hash = ();
+    for(my $i = 0; $i < scalar(@Keys);$i++){
+      $Hash{$Keys[$i]} = $Infos[$i];
+    }
+    return(%Hash);
+  }
 
   sub GetFile{
     # 2019.3.8 添加针对ENA下载数据的MD5校验
